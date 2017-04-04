@@ -27,3 +27,7 @@
 *.exe
 *.out
 *.app
+/ps_index/Debug
+/ps_index/*.suo
+/ps_index/ps_index/Debug
+/ps_index/ps_index/*.user
