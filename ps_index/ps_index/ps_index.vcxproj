@@ -59,10 +59,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(TEMP)\srcsrv
-xcopy /s /y "$(WindowsSdkDir)Debuggers\x64\srcsrv" $(TEMP)\srcsrv
-powershell -ExecutionPolicy UNRESTRICTED D:\work\!hackweek\ps_github_index\ps\github-sourceindexer.ps1 -gitHubUrl "https://raw.githubusercontent.com" -serverIsRaw -symbolsFolder $(TargetDir) -userID qrealka -repository ps_github_index -branch master -sourcesRoot D:\work\!hackweek\ps_github_index -dbgToolsPath $(TEMP)\srcsrv -verifyLocalRepo
-</Command>
+      <Command>cd $(SolutionDir)..
+index.cmd "$(TargetDir)" "$(WindowsSdkDir)Debuggers\x64\srcsrv"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Index source code</Message>
@@ -85,10 +83,8 @@ powershell -ExecutionPolicy UNRESTRICTED D:\work\!hackweek\ps_github_index\ps\gi
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(TEMP)\srcsrv
-xcopy /s /y "$(WindowsSdkDir)Debuggers\x64\srcsrv" $(TEMP)\srcsrv
-powershell -ExecutionPolicy UNRESTRICTED D:\work\!hackweek\ps_github_index\ps\github-sourceindexer.ps1 -gitHubUrl "https://raw.githubusercontent.com" -serverIsRaw -symbolsFolder $(TargetDir) -userID qrealka -repository ps_github_index -branch master -sourcesRoot D:\work\!hackweek\ps_github_index -dbgToolsPath $(TEMP)\srcsrv -verifyLocalRepo
-</Command>
+      <Command>cd $(SolutionDir)..
+index.cmd "$(TargetDir)" "$(WindowsSdkDir)Debuggers\x64\srcsrv"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Index source code</Message>
