@@ -1,3 +1,5 @@
+@echo off
+echo %*
 set pdbPath=%1
 set pdbPath=%pdbPath:~0,-2%"
 
